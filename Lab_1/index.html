@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>E-Learning</title>
+  <meta name="description" content="This is a website for the 1st laboratory">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="favicon.ico">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+
+</head>
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">
+      You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+
+  <header>
+    <img src="logo.png" alt="ubb_logo">
+    <section>
+      <audio autoplay loop><source src="Patagonian%20Nature%20Sounds%20-%20Relaxing%20Rivers,%20Lakes%20and%20Waterfalls.mp3" type="audio/mp3"></audio>
+      <nav>
+        <a href="https://cs.ubbcluj.ro/" target="_blank" ><input type="image" src="favicon.ico" alt="star"></a> |
+        <a autofocus href="#courses">Courses</a> |
+        <a autofocus href="#labs">Laboratories</a> |
+        <a autofocus href="#sems">Seminars</a> |
+        <a autofocus href="#profs">Professors</a> |
+        <a autofocus href="#schedule">Schedule</a> |
+      </nav><br><br>
+      <h1>Best E-Learning Website</h1>
+    </section>
+    <hr>
+  </header>
+
+    <!--<video autoplay="true" id="videoElement">
+
+    </video>
+    <script>
+      var video = document.querySelector("#videoElement");
+
+    if (navigator.mediaDevices.getUserMedia) {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(function (stream) {
+          video.srcObject = stream;
+        })
+        .catch(function (err0r) {
+          console.log("Something went wrong!");
+        });
+    }</script>-->
+  <main>
+  <section>
+    <video src="Facultatea%20de%20Matematică%20şi%20Informatică,%20Universitatea%20Babeş-Bolyai.mp4" autoplay controls> </video>
+    <article>
+      <h1 id="courses">Courses</h1>
+      <div>
+        <ul>
+          <li><a href="http://www.cs.ubbcluj.ro/~forest/wp/" target="_blank">Web</a></li>
+          <li><a href="https://piazza.com/class/k6z39zznyxz4l3" target="_blank">MPP</a></li>
+          <li><a href="http://www.cs.ubbcluj.ro/~chiorean/" target="_blank">ISS</a></li>
+          <li><a href="http://www.cs.ubbcluj.ro/~mihoct/" target="_blank">AI</a></li>
+          <li><a href="https://sabina-cs.com" target="_blank">Database Management Systems</a></li>
+        </ul>
+      </div>
+    </article>
+    <aside>
+      <p>These are all the courses for the second semester of the second year</p>
+      <p>Enjoy the new semester</p>
+    </aside>
+    <article>
+      <h1 id="labs">Laboratories</h1>
+      <p>Will be suspended until the COVID-19 virus outbreak is dealt with</p>
+    </article>
+    <article>
+      <h1 id="sems">Seminars</h1>
+      <p>Will be suspended until the COVID-19 virus outbreak is dealt with</p>
+    </article>
+    <article>
+      <h1 id="profs">Professors</h1>
+      <a href="http://www.cs.ubbcluj.ro/despre-facultate/structura/departamentul-de-informatica/" target="_blank">List of professors</a>
+    </article>
+    <article>
+      <h1 id="schedule">Schedule</h1>
+      <figure>
+        <img src="Screenshot_2020-03-15%20Anul%202%20Informatica%20-%20in%20limba%20engleza.png" alt="924_schedule">
+        <figcaption>Fig 1. Group 924 schedule</figcaption>
+      </figure>
+    </article>
+  </section>
+
+  <section>
+    <h4>Comments</h4>
+  <form>
+    <label for="fname">First name:</label>
+    <input type="text" id="fname" name="FirstN"><br><br>
+    <label for="lname">Last name:</label>
+    <input type="text" id="lname" name="LastN"><br><br>
+    <label for="comment">Comment</label>
+    <textarea id="comment" rows="4" cols="50"></textarea><br><br>
+    <button type="button" onclick="clicked()">Submit</button>
+  </form>
+
+  <table id="myTable" border="1px solid black">
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Comment</th>
+    </tr>
+  </table>
+  </section>
+  </main>
+  <hr>
+  <footer>
+    <p>Posted by: Lukas Grecu</p>
+    <p>Contact information: <a href="mailto:glie2536@scs.ubbcluj.ro">glie2536@scs.ubbcluj.ro</a>.</p>
+    <img src="icon.png" alt="star icon">
+    <a href="#courses">
+      <svg>
+        <circle cx="50" cy="50" r="40" stroke="blue" stroke-width="4" fill="red"/>
+      </svg>
+    </a>
+  </footer>
+  <script>
+    function clicked() {
+      var table = document.getElementById("myTable");
+      var row = table.insertRow(1);
+      var cell1 = row.insertCell(0);
+      var cell2 = row.insertCell(1);
+      var cell3 = row.insertCell(2);
+      cell1.innerHTML = document.getElementById("fname").value;
+      cell2.innerHTML = document.getElementById("lname").value;
+      cell3.innerHTML = document.getElementById("comment").value;
+    }
+  </script>
+
+
+<!--<script src="js/vendor/modernizr-3.8.0.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>-->
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <!--<script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+  -->
+</body>
+
+</html>

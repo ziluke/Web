@@ -1,0 +1,57 @@
+.main {
+  position: relative;
+  height:600px;
+  width:600px;
+}
+.thumb1 {
+  position: absolute;
+  background: url("../img/thumb1.jpeg") no-repeat;
+  background-size: contain;
+  top: 500px;
+  left:0;
+  height:100px;
+  width:100px;
+  float: left;
+}
+.thumb2 {
+  position: absolute;
+  background: url("../img/thumb2.jpeg") no-repeat;
+  background-size: contain;
+  top: 500px;
+  left:150px;
+  height:100px;
+  width:100px;
+  float: left;
+}
+.thumb3 {
+  position: absolute;
+  background: url("../img/thumb3.jpeg") no-repeat;
+  background-size: contain;
+  top: 500px;
+  left:300px;
+  height:100px;
+  width:100px;
+  float: left;
+}
+.full{
+  position: absolute;
+  top: 0;
+  bottom: 80px;
+  background-color:mediumpurple;
+  height:400px;
+  width:600px;
+}
+.thumb1:hover ~ .full{
+  background: url("../img/thumb1.jpeg") no-repeat;
+  background-size: contain;
+}
+.thumb2:hover ~ .full{
+  background: url("../img/thumb2.jpeg") no-repeat;
+  background-size: contain;
+}
+.thumb3:hover ~ .full{
+  background: url("../img/thumb3.jpeg") no-repeat;
+  background-size: contain;
+}
+
+
