@@ -1,0 +1,60 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <title>Drag'n'Drop</title>
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+<!--[if IE]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+  your browser</a> to improve your experience and security.</p>
+<![endif]-->
+<p>Here is an example of a draggable button</p>
+
+<button id="button">Drag me!</button>
+
+<script>
+  button.onmousedown = function (event) {
+
+    let shiftX = event.clientX - button.getBoundingClientRect().left;
+    let shiftY = event.clientY - button.getBoundingClientRect().top;
+
+    button.style.position = 'absolute';
+    button.style.zIndex = 1000;
+    document.body.append(button);
+
+    moveAt(event.pageX, event.pageY);
+
+    function moveAt(pageX, pageY) {
+      button.style.left = pageX - shiftX + 'px';
+      button.style.top = pageY - shiftY + 'px';
+    }
+
+    function onMouseMove(event) {
+      moveAt(event.pageX, event.pageY);
+    }
+
+    document.addEventListener('mousemove', onMouseMove);
+
+    button.onmouseup = function () {
+      document.removeEventListener('mousemove', onMouseMove);
+      button.onmouseup = null;
+    };
+
+  };
+
+  button.ondragstart = function () {
+    return false;
+  };
+</script>
+
+</body>
+</html>

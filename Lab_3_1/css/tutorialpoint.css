@@ -1,0 +1,280 @@
+body {
+  font-family: "Open Sans", Arial, sans-serif !important;
+  font-size: 14px;
+  line-height: 22px;
+  background: #eee;
+  margin: 0;
+}
+
+.tp-navbar {
+  display: block;
+  height: 40px;
+  background: rgba(35, 35, 35, .7);
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.tp-container {
+  max-width: 1170px;
+  box-sizing: border-box;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.tp-primary-header {
+  text-align: center;
+  float: left;
+}
+
+.tp-primary-header:hover {
+  background: #40b35d;
+  color: #4d4d4d;
+}
+
+.tp-navbar .home {
+  width: 6%;
+  padding: 9px 0 9px 0;
+}
+
+.tp-navbar .jobs {
+  width: 6%;
+  padding: 9px 0 9px 0;
+}
+
+.tp-navbar .qa {
+  width: 6%;
+  padding: 9px 0 9px 0;
+}
+
+.tp-navbar .tools {
+  width: 6%;
+  padding: 9px 0 9px 0;
+}
+
+.tp-navbar .ground {
+  width: 11%;
+  padding: 9px 0 9px 0;
+}
+
+.tp-navbar .ca {
+  width: 11%;
+  padding: 9px 0 9px 0;
+}
+
+.tp-navbar .upsc {
+  width: 11%;
+  padding: 9px 0 9px 0;
+}
+
+.tp-navbar .tutors {
+  width: 11%;
+  padding: 9px 0 9px 0;
+}
+
+.tp-navbar .whiteboard {
+  width: 11%;
+  padding: 9px 0 9px 0;
+}
+
+.tp-navbar .nm {
+  width: 11%;
+  padding: 9px 0 9px 0;
+}
+
+.tp-navbar .tutorix {
+  width: 6%;
+  padding: 9px 0 9px 0;
+}
+
+.tp-banner {
+  background: #000 url(https://www.tutorialspoint.com/videotutorials/images/video-banner0.jpg) no-repeat center center;
+  min-height: 100px;
+  margin: -1px 0 0 0;
+  padding: 50px 0 20px 0;
+}
+
+.tp-banner .tp-logo {
+  width: 100%;
+  text-align: center;
+}
+
+.tp-banner .tp-banner-links {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  margin: 20px 0 20px 0;
+}
+
+.tp-banner .tp-banner-links span {
+  font-size: 22px;
+  padding: 0 1%;
+}
+
+.tp-banner .tp-banner-links span:hover {
+  color: #61f386;
+}
+
+.tp-courses {
+  text-align: center;
+  line-height: 24px;
+  padding: 20px 0 10px 0 !important;
+  margin: 15px auto 10px auto;
+  overflow: hidden;
+}
+
+.tp-courses h1 {
+  font-size: 28px;
+  font-weight: normal;
+  text-align: center;
+  line-height: 24px;
+  color: #797979;
+}
+
+.tp-courses .tp-course-header {
+  list-style: none;
+  padding-left: 0;
+  display: table;
+  border-bottom: 1px solid #cecece;
+  width: 96.5%;
+  margin: 0 auto;
+}
+
+.tp-courses .tp-course-header > li {
+  text-align: center;
+  color: #797979;
+  display: table-cell;
+  cursor: pointer;
+  padding-left: 0;
+  padding-right: 0;
+  height: 48px;
+  width: 100px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.tp-courses .tp-course-header > :active {
+  color: #40b35d;
+  border-bottom: 2px solid #40b35d;
+}
+
+.tp-slider {
+  position: relative;
+  display: block;
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.prev, .next {
+  display: block;
+  position: absolute;
+  top: 50%;
+  background-color: white;
+  border: none;
+  color: #797979;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.prev {
+  left: -2px;
+}
+
+.next {
+  right: -2px;
+}
+
+.tp-cards {
+  display: flex;
+  box-sizing: border-box;
+}
+
+.tp-cards .tp-card {
+  float: left;
+  width: 25%;
+  margin: 5px;
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.tp-cards .tp-card > img {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  width: 100%;
+  height: 128px;
+}
+
+.card-title {
+  font-size: 14.5px;
+  font-weight: 600;
+  text-align: left;
+  line-height: 19px;
+  height: 49px;
+  background: white;
+  padding: 10px 10px 10px 20px;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.card-author {
+  height: 35px;
+  text-align: left;
+  padding: 0 0 0 20px;
+  margin: 0;
+  background: white;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.card-bottom {
+  display: flex;
+}
+
+.price, .cart {
+  width: 50%;
+  float: left;
+  text-align: center;
+  box-sizing: border-box;
+  background: white;
+}
+
+.price {
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+}
+
+strike {
+  color: red;
+}
+
+.cart {
+  border-bottom: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
+.tp-view-more {
+  float: right;
+  margin-right: 20px;
+  text-align: center;
+  background: #fff;
+  font-size: 14px;
+  border: none;
+  padding: 10px 5px 10px 5px;
+  cursor: pointer;
+  box-shadow: 1px 4px 16px 0 rgba(0, 0, 0, 0.2);
+}

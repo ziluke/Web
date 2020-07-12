@@ -1,0 +1,99 @@
+﻿@model IEnumerable<NewsService.Models.News>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+    var prevFilter = "";
+
+    $(function () {
+        if (@Session["admin"] == 0) {
+            $(".editable").hide();
+        }
+
+        function filter() {
+            if ($("#searchString").val() != "")
+                prevFilter += "Category: " + $("#searchString").val();
+            if ($("#startDate").val() != "")
+                prevFilter += " Start Date: " + $("#startDate").val();
+            if ($("#endDate").val() != "")
+                prevFilter += " End Date: " + $("#endDate").val();
+        }
+
+        function filterBtnClicked() {
+            $("#prevFilter").html(prevFilter);
+            filter();
+        }
+
+        $("#subForm").submit(function (event) {
+            filterBtnClicked();
+        });
+    });
+</script>
+
+<h2>Index</h2>
+
+<p>
+    <span>Previous filter: <span id="prevFilter"></span></span>
+    <p class="editable">@Html.ActionLink("Create News", "Create")</p>
+
+    @using (Html.BeginForm("Index", "News", new {name="subForm", id="subForm"}))
+    {
+        <p>
+            Category: @Html.TextBox("searchString") <br />
+            Start Date: <input type="date" name="startDate" />
+            End Date: <input type="date" name="endDate" />
+            <input type="submit" value="Filter" name="filterBtn" onclick="filterBtnClicked"/>
+        </p>
+    }
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Producer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td class="editable">
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

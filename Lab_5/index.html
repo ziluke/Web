@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery-3.5.0.min.js"></script>
+        <style>
+            .puzzle {
+                background-image:url(/images/puzzle.jpg);
+                width:137.5px;
+                height:137.5px;
+                }
+
+            .empty{
+                background-image:url(/images/empty.jpg);
+                width:137.5px;
+                height:137.5px;
+            }
+        </style>
+        <script>
+            var emptyCell = 16
+            $(function(){
+                $("td").append($("<img></img>").addClass("puzzle"));
+                var positions = ["0px", "-137.5px", "-275px", "-412.5px"]
+                
+                var ids = []
+
+                for(i=0;i<16;i++){
+                    ok = true
+                    while(ok){
+                        ok = false
+                        pos = 1 + Math.floor(Math.random() * 1000)%16;
+                        for(j=0;j<ids.length;j++)
+                            if(ids[j] == pos)
+                            {
+                                ok = true
+                            }
+                    }
+                    ids.push(pos)
+                    if(pos == 16)
+                        emptyCell = i
+                }
+
+                console.log(emptyCell, ids)
+                var id = 0
+                for(i=0;i<4;i++)
+                {
+                    for(j=0;j<4;j++){
+                        if(id!=emptyCell){
+                            $("#"+ids[id]+" img").css("background-position", positions[j]+" "+positions[i])
+                        }
+                        else{
+                            $("#"+ids[id]+" img").removeClass("puzzle")
+                            $("#"+ids[id]+" img").addClass("empty")
+                            //console.log(ids[id])
+                        }
+                        
+                        id+=1
+                    }
+                }
+
+                $("td").click(function(){
+                    //console.log($(this).attr("id"))
+                    id = $(this).attr("id")
+                    if(id == ids[emptyCell]){
+                        return
+                    }
+                    else{
+                        var $td = $(this)
+                        var index = $td.index(), $tr =$td.parent();
+                        var $nbrs = $td.prev(); //find the previous td
+                        $nbrs = $nbrs.add($td.next());//find the next td
+                        $nbrs = $nbrs.add($tr.prev().find('td').eq(index));//find the td with the same index in previous row
+                        $nbrs = $nbrs.add($tr.next().find('td').eq(index));//find the td with the same index in next row
+
+                        //$nbrs.css('color', 'red')
+                        //console.log($(this).attr("id"))
+                        //console.log($nbrs.get(), emptyCell)
+                        found = false
+                        var empty = 0
+                        for(i=0;i<$($nbrs).length;i++){
+                            if($($nbrs[i]).attr("id") == ids[emptyCell]){
+                                //console.log($($nbrs[i]).attr("id"))
+                                found = true
+                                empty = $($nbrs[i])
+                            }
+                        }
+
+                        if(!found){
+                            return
+                        }
+                        else{
+                            var pos = $("#"+$(this).attr("id")+" img").css("background-position")
+                            console.log(pos, empty.attr("id"))
+                            $("#"+empty.attr("id")+" img").removeClass("empty")
+                            $("#"+empty.attr("id")+" img").addClass("puzzle")
+                            $("#"+empty.attr("id")+" img").css("background-position", pos)
+                            $("#"+$(this).attr("id")+" img").removeClass("puzzle")
+                            $("#"+$(this).attr("id")+" img").addClass("empty")
+                            for(i=0;i<ids.length;i++)
+                            {
+                                if(ids[i] == $(this).attr("id"))
+                                {
+                                    emptyCell = i
+                                    break
+                                }
+                            }
+                        }
+                    }
+                })
+            });
+        </script>
+    </head>
+    <body>
+        <table>
+            <tbody>
+                <tr>
+                    <td id="1"></td>
+                    <td id="2"></td>
+                    <td id="3"></td>
+                    <td id="4"></td>
+                </tr>
+                <tr>
+                    <td id="5"></td>
+                    <td id="6"></td>
+                    <td id="7"></td>
+                    <td id="8"></td>
+                </tr>
+                <tr>
+                    <td id="9"></td>
+                    <td id="10"></td>
+                    <td id="11"></td>
+                    <td id="12"></td>
+                </tr>
+                <tr>
+                    <td id="13"></td>
+                    <td id="14"></td>
+                    <td id="15"></td>
+                    <td id="16"></td>
+                </tr>
+            </tbody>
+        </table>
+    </body>
+</html>
